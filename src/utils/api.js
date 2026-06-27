@@ -26,8 +26,14 @@ Blood in stool + abdominal pain → Gastroenterologist (not General Surgeon — 
 Ear ringing + dizziness + hearing loss → ENT/Audiologist (not Neurologist — inner ear pathology likely)
 Eye redness + pain + vision changes → Ophthalmologist (not General Physician — needs slit lamp)
 Persistent fatigue + hair loss + cold intolerance → Endocrinologist (not Dermatologist — possible hypothyroid)
+Flank pain + blood in urine + painful urination → Urologist (not Nephrologist — likely stone or infection)
+Chronic kidney issues + swelling + high BP → Nephrologist (not Urologist — medical kidney management)
+Joint/bone pain without systemic symptoms → Orthopedist (not Rheumatologist — mechanical issue likely)
+Chest pain + palpitations + dizziness → Cardiologist (not General Physician — cardiac workup needed)
+Persistent anxiety + depression without physical symptoms → Psychiatrist (not Endocrinologist — mental health focus)
+Irregular periods + pelvic pain → Gynaecologist (not General Physician — reproductive system evaluation)
 
-DOCTOR DATABASE — select 3 most relevant from the recommended specialist category:
+DOCTOR DATABASE — select 3 from the RECOMMENDED specialist category ONLY. Do NOT pick doctors from unrelated specialties.
 
 NEUROLOGISTS:
 - Dr. Priya Sharma | 14 yrs exp | 890 neuro patients | 4.7 rating | ₹599 | "Thorough evaluation of my chronic migraines. Explained everything clearly." | Available: Today 6:30 PM, Tomorrow 10 AM
@@ -69,12 +75,46 @@ DERMATOLOGISTS:
 - Dr. Varun Khanna | 10 yrs exp | 580 skin patients | 4.5 rating | ₹449 | "Practical advice, no unnecessary products recommended." | Available: Tomorrow 11 AM, Day after 3 PM
 - Dr. Swati Mishra | 18 yrs exp | 1,200 skin patients | 4.8 rating | ₹749 | "Treats the root cause, not just symptoms." | Available: Day after tomorrow 10 AM
 
-GENERAL PHYSICIANS (fallback):
+UROLOGISTS:
+- Dr. Anil Kapoor | 16 yrs exp | 980 urology patients | 4.7 rating | ₹649 | "Handled my kidney stone case expertly. Clear explanation of all options." | Available: Today 5 PM, Tomorrow 10 AM
+- Dr. Sameer Deshmukh | 12 yrs exp | 620 urology patients | 4.5 rating | ₹499 | "Very reassuring during a stressful time. Thorough examination." | Available: Tomorrow 11 AM, Day after 3 PM
+- Dr. Raghav Mittal | 20 yrs exp | 1,400 urology patients | 4.8 rating | ₹849 | "Best urologist I've consulted. Accurate diagnosis, minimal intervention." | Available: Day after tomorrow 9 AM
+
+NEPHROLOGISTS:
+- Dr. Sunanda Pillai | 14 yrs exp | 720 kidney patients | 4.6 rating | ₹599 | "Managed my chronic kidney condition with great care and clarity." | Available: Today 6 PM, Tomorrow 10 AM
+- Dr. Harsh Vardhan | 18 yrs exp | 1,050 kidney patients | 4.8 rating | ₹799 | "Incredibly knowledgeable. Explained every test result patiently." | Available: Tomorrow 2 PM, Day after 11 AM
+- Dr. Neha Agarwal | 10 yrs exp | 480 kidney patients | 4.4 rating | ₹449 | "Good listener, proactive about preventive care." | Available: Today 4:30 PM, Tomorrow 9 AM
+
+CARDIOLOGISTS:
+- Dr. Ashwin Mehta | 20 yrs exp | 1,500 cardiac patients | 4.8 rating | ₹899 | "Thorough cardiac workup. Found an issue two other doctors missed." | Available: Tomorrow 10 AM, Day after 2 PM
+- Dr. Kavya Ranganathan | 13 yrs exp | 780 cardiac patients | 4.6 rating | ₹649 | "Calm and reassuring. Explained my ECG results in plain language." | Available: Today 5 PM, Tomorrow 11 AM
+- Dr. Nikhil Sharma | 16 yrs exp | 1,100 cardiac patients | 4.7 rating | ₹749 | "Excellent follow-up care. Always available for questions." | Available: Today 6:30 PM, Day after 10 AM
+
+ORTHOPEDISTS:
+- Dr. Suresh Reddy | 18 yrs exp | 1,200 ortho patients | 4.7 rating | ₹599 | "Fixed my knee issue without surgery. Conservative approach worked." | Available: Today 4 PM, Tomorrow 10 AM
+- Dr. Priyanka Jain | 11 yrs exp | 640 ortho patients | 4.5 rating | ₹449 | "Great with sports injuries. Practical rehab plan." | Available: Tomorrow 11 AM, Day after 3 PM
+- Dr. Mohan Krishnamurthy | 22 yrs exp | 1,600 ortho patients | 4.9 rating | ₹899 | "The most experienced orthopedist I've seen. Worth the wait." | Available: Day after tomorrow 10 AM
+
+GYNAECOLOGISTS:
+- Dr. Pallavi Desai | 15 yrs exp | 1,100 gynae patients | 4.7 rating | ₹599 | "Understood my PCOS concerns holistically. Not just prescriptions." | Available: Today 5:30 PM, Tomorrow 10 AM
+- Dr. Rina Chatterjee | 12 yrs exp | 780 gynae patients | 4.6 rating | ₹499 | "Very patient, answered all my questions without rushing." | Available: Tomorrow 2 PM, Day after 11 AM
+- Dr. Anjali Nambiar | 19 yrs exp | 1,400 gynae patients | 4.8 rating | ₹749 | "Best gynaecologist I've consulted. Thorough and empathetic." | Available: Day after tomorrow 9 AM
+
+PSYCHIATRISTS:
+- Dr. Vikrant Khanna | 14 yrs exp | 860 mental health patients | 4.6 rating | ₹699 | "Finally felt heard. No judgement, just genuine understanding." | Available: Today 6 PM, Tomorrow 10 AM
+- Dr. Aparna Mukherjee | 10 yrs exp | 520 mental health patients | 4.5 rating | ₹549 | "Balanced approach — therapy and medication together." | Available: Tomorrow 11 AM, Day after 3 PM
+- Dr. Siddharth Iyer | 18 yrs exp | 1,200 mental health patients | 4.8 rating | ₹849 | "Changed my life. Patient, thorough, and deeply knowledgeable." | Available: Day after tomorrow 10 AM
+
+GENERAL PHYSICIANS (fallback when no specialist clearly fits):
 - Dr. Alok Kumar | 20 yrs exp | 3,200 patients | 4.6 rating | ₹299 | "Great first point of contact. Referred me correctly." | Available: Today 4 PM, Tomorrow 9 AM
 - Dr. Sunita Rao | 15 yrs exp | 2,100 patients | 4.5 rating | ₹249 | "Thorough general checkup, caught things I didn't expect." | Available: Today 5 PM, Tomorrow 10 AM
 - Dr. Manish Tiwari | 12 yrs exp | 1,800 patients | 4.4 rating | ₹199 | "Affordable and reliable. Good for initial evaluation." | Available: Today 6 PM, Tomorrow 11 AM
 
-IMPORTANT: Select 3 doctors from the RECOMMENDED specialist category. Match reason should reference the patient's specific symptoms.
+RESPONSE FORMAT RULES:
+- "reasoning": exactly 2-3 sentences, suggestive language only.
+- "ruled_out": exactly 2 alternatives. Each "reason" must be 1-2 sentences max. Be specific about WHY it was deprioritised for this patient.
+- "matched_doctors": exactly 3 doctors from the RECOMMENDED specialist category ONLY. Each "match_reason" must be under 15 words and reference the patient's specific symptoms.
+- "consultation_prep": exactly 5 specific, actionable items. Not generic advice — tailored to the patient's described symptoms.
 
 Return ONLY valid JSON, no other text:
 {
@@ -86,7 +126,7 @@ Return ONLY valid JSON, no other text:
   "ruled_out": [
     {
       "specialist": "...",
-      "reason": "...(why this was considered but deprioritised, suggestive language)"
+      "reason": "...(1-2 sentences, specific to this patient)"
     }
   ],
   "matched_doctors": [
@@ -98,11 +138,11 @@ Return ONLY valid JSON, no other text:
       "relevant_review": "...",
       "fee": 0,
       "availability": "...",
-      "match_reason": "...(specific to patient's symptoms)"
+      "match_reason": "...(under 15 words, specific to patient symptoms)"
     }
   ],
   "consultation_prep": [
-    "...(specific things to mention/bring to the appointment)"
+    "...(specific actionable item tailored to described symptoms)"
   ]
 }`
 
