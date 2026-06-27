@@ -6,6 +6,10 @@ const CONFIDENCE_STYLES = {
   low: { bg: 'bg-red/10', text: 'text-red', border: 'border-red/30', label: 'Low Confidence' },
 }
 
+function getInitials(name) {
+  return name.split(' ').slice(1).map(n => n[0]).join('').toUpperCase()
+}
+
 function RecommendationScreen({ recommendation, onDoctorSelect, onStartOver }) {
   const { assessment, ruled_out, matched_doctors, consultation_prep } = recommendation
   const confidence = CONFIDENCE_STYLES[assessment.confidence] || CONFIDENCE_STYLES.medium
@@ -89,8 +93,13 @@ function RecommendationScreen({ recommendation, onDoctorSelect, onStartOver }) {
                     onClick={() => onDoctorSelect(doc)}
                     className="w-full text-left px-5 py-4 hover:bg-gray-soft transition-colors cursor-pointer"
                   >
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1 space-y-2.5">
+                    <div className="flex items-start gap-3.5">
+                      {/* Avatar */}
+                      <div className="w-10 h-10 rounded-full bg-teal-light flex items-center justify-center shrink-0">
+                        <span className="text-sm font-bold text-teal">{getInitials(doc.name)}</span>
+                      </div>
+
+                      <div className="flex-1 min-w-0 space-y-2">
                         {/* Name and rating */}
                         <div className="flex items-center gap-2">
                           <h3 className="text-sm font-semibold text-dark">{doc.name}</h3>

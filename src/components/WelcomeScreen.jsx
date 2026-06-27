@@ -20,16 +20,43 @@ function WelcomeScreen({ onStart }) {
       <main className="flex-1 flex flex-col items-center justify-center px-5 py-12">
         <div className="max-w-xl w-full space-y-10">
 
-          {/* Hero illustration */}
+          {/* Hero illustration — symptom → reasoning → specialist */}
           <div className="flex justify-center">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="40" cy="28" r="14" stroke="#0D9488" strokeWidth="1.5" fill="#CCFBF1" />
-              <circle cx="22" cy="56" r="10" stroke="#0D9488" strokeWidth="1.5" fill="#F9FAFB" />
-              <circle cx="58" cy="56" r="10" stroke="#0D9488" strokeWidth="1.5" fill="#F9FAFB" />
-              <line x1="33" y1="39" x2="25" y2="48" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="47" y1="39" x2="55" y2="48" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="30" y1="52" x2="50" y2="52" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="3 3" />
-              <path d="M36 25 L40 18 L44 25 M40 18 L40 34" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="220" height="72" viewBox="0 0 220 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Patient node */}
+              <circle cx="36" cy="36" r="22" stroke="#0D9488" strokeWidth="1.5" fill="#CCFBF1" />
+              <path d="M36 28 C36 28 30 32 30 36 C30 39.3 32.7 42 36 42 C39.3 42 42 39.3 42 36 C42 32 36 28 36 28Z" fill="#0D9488" opacity="0.3" />
+              <circle cx="36" cy="30" r="4" stroke="#0D9488" strokeWidth="1.5" fill="none" />
+              <path d="M28 44 C28 40 32 38 36 38 C40 38 44 40 44 44" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+
+              {/* Arrow 1 */}
+              <line x1="62" y1="36" x2="82" y2="36" stroke="#0D9488" strokeWidth="1.5" strokeDasharray="4 3" />
+              <polyline points="79,32 84,36 79,40" stroke="#0D9488" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+              {/* Brain/reasoning node */}
+              <circle cx="110" cy="36" r="22" stroke="#0D9488" strokeWidth="1.5" fill="#CCFBF1" />
+              <path d="M102 36 C102 31 105 28 110 28 C115 28 118 31 118 36" stroke="#0D9488" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+              <path d="M104 38 C104 42 107 44 110 44 C113 44 116 42 116 38" stroke="#0D9488" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+              <line x1="110" y1="28" x2="110" y2="24" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="104" y1="30" x2="101" y2="27" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="116" y1="30" x2="119" y2="27" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" />
+              <circle cx="110" cy="36" r="3" fill="#0D9488" opacity="0.3" />
+
+              {/* Arrow 2 */}
+              <line x1="136" y1="36" x2="156" y2="36" stroke="#0D9488" strokeWidth="1.5" strokeDasharray="4 3" />
+              <polyline points="153,32 158,36 153,40" stroke="#0D9488" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+              {/* Specialist node */}
+              <circle cx="184" cy="36" r="22" stroke="#0D9488" strokeWidth="1.5" fill="#CCFBF1" />
+              <path d="M184 28 L184 44" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M176 36 L192 36" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" />
+              <circle cx="184" cy="36" r="8" stroke="#0D9488" strokeWidth="1.5" fill="none" />
+              <circle cx="184" cy="36" r="3" fill="#0D9488" opacity="0.3" />
+
+              {/* Labels */}
+              <text x="36" y="66" textAnchor="middle" fontSize="9" fill="#0D9488" fontFamily="Inter, system-ui, sans-serif" fontWeight="500">You</text>
+              <text x="110" y="66" textAnchor="middle" fontSize="9" fill="#0D9488" fontFamily="Inter, system-ui, sans-serif" fontWeight="500">Reasoning</text>
+              <text x="184" y="66" textAnchor="middle" fontSize="9" fill="#0D9488" fontFamily="Inter, system-ui, sans-serif" fontWeight="500">Specialist</text>
             </svg>
           </div>
 
