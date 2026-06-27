@@ -1,6 +1,6 @@
-@import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
 
 @theme {
   --color-teal: #0D9488;
@@ -15,15 +15,20 @@
   --color-green: #10B981;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
+
 @keyframes slide-up {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
 
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
+}
+
+html {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+input, button, textarea {
+  font-size: 16px;
 }

@@ -63,7 +63,6 @@ function SymptomChat({ messages, questionIndex, onAnswer, isEmergency, onStartOv
     )
   }
 
-  // Find the latest question message to identify which has active options
   const lastQuestionIdx = [...messages].reverse().findIndex(
     m => m.role === 'assistant' && m.options
   )
@@ -73,12 +72,11 @@ function SymptomChat({ messages, questionIndex, onAnswer, isEmergency, onStartOv
     <div className="min-h-screen flex flex-col bg-white">
       {/* Header */}
       <header className="sticky top-0 z-10 bg-white border-b border-gray-border">
-        <div className="px-5 py-3 flex items-center gap-2">
+        <div className="px-4 sm:px-5 py-3 flex items-center gap-2">
           <Stethoscope className="w-5 h-5 text-teal" strokeWidth={2} />
           <span className="text-base font-semibold text-dark">CareLogic</span>
           <span className="text-xs text-dark/40 ml-1">by Care AI</span>
         </div>
-        {/* Progress bar */}
         <div className="h-0.5 bg-gray-border">
           <div
             className="h-full bg-teal transition-all duration-500 ease-out"
@@ -88,14 +86,13 @@ function SymptomChat({ messages, questionIndex, onAnswer, isEmergency, onStartOv
       </header>
 
       {/* Messages */}
-      <main className="flex-1 overflow-y-auto px-4 py-6 pb-32">
+      <main className="flex-1 overflow-y-auto px-3 sm:px-4 py-4 sm:py-6 pb-28 sm:pb-32">
         <div className="max-w-xl mx-auto space-y-3">
           {messages.map((msg, i) => (
             <div key={i}>
-              {/* Message bubble */}
               <div className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div
-                  className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${
+                  className={`max-w-[88%] sm:max-w-[85%] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-2xl text-sm leading-relaxed ${
                     msg.isEmergency
                       ? 'bg-red/10 border border-red/30 text-red-900'
                       : msg.role === 'user'
@@ -120,14 +117,13 @@ function SymptomChat({ messages, questionIndex, onAnswer, isEmergency, onStartOv
                 </div>
               </div>
 
-              {/* Choice buttons — only on the active (latest) question */}
               {msg.options && i === activeQuestionMsgIdx && !isComplete && !isEmergency && (
-                <div className="mt-3 flex flex-wrap gap-2 pl-1">
+                <div className="mt-2.5 sm:mt-3 flex flex-wrap gap-1.5 sm:gap-2 pl-1">
                   {msg.type === 'choice' && msg.options.map((option) => (
                     <button
                       key={option}
                       onClick={() => handleChoiceSelect(option)}
-                      className="px-4 py-2 text-sm font-medium rounded-full border border-teal text-teal
+                      className="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-full border border-teal text-teal
                                  hover:bg-teal hover:text-white active:scale-95 transition-all cursor-pointer"
                     >
                       {option}
@@ -137,7 +133,7 @@ function SymptomChat({ messages, questionIndex, onAnswer, isEmergency, onStartOv
                     <button
                       key={chip}
                       onClick={() => toggleChip(chip)}
-                      className={`px-4 py-2 text-sm font-medium rounded-full border transition-all cursor-pointer active:scale-95 ${
+                      className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-full border transition-all cursor-pointer active:scale-95 ${
                         selectedChips.includes(chip)
                           ? 'bg-teal text-white border-teal'
                           : 'border-teal text-teal hover:bg-teal/10'
@@ -154,9 +150,9 @@ function SymptomChat({ messages, questionIndex, onAnswer, isEmergency, onStartOv
         </div>
       </main>
 
-      {/* Input area — hidden for pure choice questions and when complete/emergency */}
+      {/* Input area */}
       {!isComplete && !isEmergency && !isChoice && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-border px-4 py-3">
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-border px-3 sm:px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
           <div className="max-w-xl mx-auto flex gap-2">
             <div className="flex-1 relative">
               <input
@@ -165,8 +161,8 @@ function SymptomChat({ messages, questionIndex, onAnswer, isEmergency, onStartOv
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 onKeyDown={e => e.key === 'Enter' && handleSubmit(e)}
-                placeholder={isHybrid ? 'Add anything else or tap chips above...' : 'Type your answer...'}
-                className="w-full px-4 py-3 rounded-xl border border-gray-border text-sm text-dark
+                placeholder={isHybrid ? 'Add anything else or tap above...' : 'Type your answer...'}
+                className="w-full px-3.5 sm:px-4 py-3 rounded-xl border border-gray-border text-sm text-dark
                            placeholder:text-dark/30 focus:outline-none focus:border-teal focus:ring-1 focus:ring-teal/30"
               />
             </div>
@@ -184,7 +180,7 @@ function SymptomChat({ messages, questionIndex, onAnswer, isEmergency, onStartOv
 
       {/* Emergency / complete — start over */}
       {(isEmergency || isComplete) && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-border px-4 py-3">
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-border px-3 sm:px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
           <div className="max-w-xl mx-auto">
             <button
               onClick={onStartOver}

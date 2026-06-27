@@ -23,18 +23,18 @@ function DoctorDetail({ doctor, specialistType, onBack }) {
       </header>
 
       {/* Content */}
-      <main className="flex-1 overflow-y-auto">
-        <div className="max-w-2xl mx-auto px-5 py-6 space-y-6">
+      <main className="flex-1 overflow-y-auto pb-24">
+        <div className="max-w-2xl mx-auto px-4 sm:px-5 py-5 sm:py-6 space-y-5 sm:space-y-6">
 
           {/* Doctor identity */}
-          <div className="flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-teal-light flex items-center justify-center shrink-0">
-              <span className="text-lg font-bold text-teal">
+          <div className="flex items-start gap-3 sm:gap-4">
+            <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-teal-light flex items-center justify-center shrink-0">
+              <span className="text-base sm:text-lg font-bold text-teal">
                 {doctor.name.split(' ').slice(1).map(n => n[0]).join('')}
               </span>
             </div>
             <div className="space-y-1">
-              <h1 className="text-lg font-bold text-dark">{doctor.name}</h1>
+              <h1 className="text-base sm:text-lg font-bold text-dark">{doctor.name}</h1>
               <p className="text-sm text-dark/50">{specialistType}</p>
               <div className="flex items-center gap-1">
                 <Star className="w-4 h-4 text-amber fill-amber" />
@@ -45,26 +45,26 @@ function DoctorDetail({ doctor, specialistType, onBack }) {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-3">
-            <div className="bg-gray-soft rounded-xl p-3.5 text-center">
-              <Clock className="w-4 h-4 text-teal mx-auto mb-1.5" />
-              <p className="text-base font-bold text-dark">{doctor.experience_years}</p>
-              <p className="text-[11px] text-dark/40 mt-0.5">Years Exp</p>
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+            <div className="bg-gray-soft rounded-xl p-3 sm:p-3.5 text-center">
+              <Clock className="w-4 h-4 text-teal mx-auto mb-1 sm:mb-1.5" />
+              <p className="text-sm sm:text-base font-bold text-dark">{doctor.experience_years}</p>
+              <p className="text-[10px] sm:text-[11px] text-dark/40 mt-0.5">Years Exp</p>
             </div>
-            <div className="bg-gray-soft rounded-xl p-3.5 text-center">
-              <Users className="w-4 h-4 text-teal mx-auto mb-1.5" />
-              <p className="text-base font-bold text-dark">{doctor.similar_patients.toLocaleString()}</p>
-              <p className="text-[11px] text-dark/40 mt-0.5">Similar Patients</p>
+            <div className="bg-gray-soft rounded-xl p-3 sm:p-3.5 text-center">
+              <Users className="w-4 h-4 text-teal mx-auto mb-1 sm:mb-1.5" />
+              <p className="text-sm sm:text-base font-bold text-dark">{doctor.similar_patients.toLocaleString()}</p>
+              <p className="text-[10px] sm:text-[11px] text-dark/40 mt-0.5">Similar Patients</p>
             </div>
-            <div className="bg-gray-soft rounded-xl p-3.5 text-center">
-              <IndianRupee className="w-4 h-4 text-teal mx-auto mb-1.5" />
-              <p className="text-base font-bold text-dark">₹{doctor.fee}</p>
-              <p className="text-[11px] text-dark/40 mt-0.5">Consultation Fee</p>
+            <div className="bg-gray-soft rounded-xl p-3 sm:p-3.5 text-center">
+              <IndianRupee className="w-4 h-4 text-teal mx-auto mb-1 sm:mb-1.5" />
+              <p className="text-sm sm:text-base font-bold text-dark">₹{doctor.fee}</p>
+              <p className="text-[10px] sm:text-[11px] text-dark/40 mt-0.5">Consultation Fee</p>
             </div>
           </div>
 
           {/* Match reason */}
-          <div className="bg-teal-light/40 border border-teal/20 rounded-xl px-5 py-4">
+          <div className="bg-teal-light/40 border border-teal/20 rounded-xl px-4 sm:px-5 py-3.5 sm:py-4">
             <div className="flex items-start gap-2.5">
               <CircleCheck className="w-4 h-4 text-teal shrink-0 mt-0.5" />
               <div>
@@ -75,7 +75,7 @@ function DoctorDetail({ doctor, specialistType, onBack }) {
           </div>
 
           {/* Review */}
-          <div className="bg-white rounded-xl border border-gray-border p-5">
+          <div className="bg-white rounded-xl border border-gray-border p-4 sm:p-5">
             <div className="flex items-center gap-2 mb-3">
               <MessageSquareQuote className="w-4 h-4 text-dark/30" />
               <h3 className="text-sm font-semibold text-dark">Patient Review</h3>
@@ -86,7 +86,7 @@ function DoctorDetail({ doctor, specialistType, onBack }) {
           </div>
 
           {/* Availability */}
-          <div className="bg-white rounded-xl border border-gray-border p-5">
+          <div className="bg-white rounded-xl border border-gray-border p-4 sm:p-5">
             <div className="flex items-center gap-2 mb-3">
               <CalendarCheck className="w-4 h-4 text-dark/30" />
               <h3 className="text-sm font-semibold text-dark">Next Available</h3>
@@ -106,7 +106,7 @@ function DoctorDetail({ doctor, specialistType, onBack }) {
       </main>
 
       {/* Book CTA */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-border px-5 py-4">
+      <div className="sticky bottom-0 bg-white border-t border-gray-border px-4 sm:px-5 py-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
         <div className="max-w-2xl mx-auto">
           {showBookingConfirm ? (
             <div className="w-full py-3 rounded-xl bg-green/10 border border-green/30 text-center">
