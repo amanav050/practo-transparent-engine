@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@theme {
+  --color-teal: #0D9488;
+  --color-teal-light: #CCFBF1;
+  --color-teal-dark: #0F766E;
+  --color-dark: #1A1A2E;
+  --color-gray-border: #E5E7EB;
+  --color-gray-soft: #F9FAFB;
+  --color-amber: #F59E0B;
+  --color-amber-light: #FEF3C7;
+  --color-red: #EF4444;
+  --color-green: #10B981;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
